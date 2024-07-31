@@ -1,0 +1,97 @@
+Authenticate
+
+	Authenticate
+		 Authenticate OK
+		 Authenticate ERR (path)
+		 Authenticate ERR (user)
+		 Authenticate ERR (pass)
+	Chenge-password
+		 Chenge-password OK
+		 Chenge-password ERR (path)
+		 Chenge-password ERR (user)
+		 Chenge-password ERR (current pass)
+		 Chenge-password ERR (new pass)
+	Reset-password
+		 Chenge-password OK
+		 Chenge-password ERR (path)
+		 Chenge-password ERR (user)
+		 Chenge-password ERR (email)
+
+Enrollment
+
+	Obtener usuarios (GET)
+		GET USER OK (sin filtros)
+		GET USER ERR (sin retailStore)
+		GET USER ERR  (Filtrando por supplierItemId)
+		GET USER ERR (Filtrando por CustomerId)
+		GET USER ERR (Filtrando por SearchValue)
+		GET USER OK (Filtrando por supplierItemId)
+		GET USER OK (Filtrando por CustomerId)
+		GET USER OK (Filtrando por SearchValue)
+		GET USER OK (Usando limit)
+
+	Crear usuario (POST)
+		CREATE USER OK 
+		CREATE USER ERR (sin retailStore)
+		CREATE USER ERR (sin por supplierItemId)
+		CREATE USER ERR (sin por CustomerId)
+		CREATE USER ERR (sin orderID)
+		CREATE USER ERR (sin por SearchValue)
+		CREATE USER ERR (sin por enrollmentType)
+		CREATE USER ERR (sin por CustomerId)
+		CREATE USER ERR (sin por description)
+		CREATE USER ERR (sin ningun dato)
+
+	Editar usuario (PATCH)
+		EDIT USER OK
+		EDIT USER ERR (sin retailStore)
+		EDIT USER ERR (sin ningun dato)
+		EDIT USER ERR (con campos invalidos - currentData)
+		EDIT USER ERR (con campos invalidos - targetData)
+
+	Eliminar usuario (DETELE)
+		DEL USER OK
+		DEL USER OK (filtrando supplierItemId)
+		DEL USER OK (filtrando orderID)
+		DEL USER OK (filtrando searchvalue)
+		DEL USER ERR (user inexistente)
+		DEL USER ERR (sin ratailStore)
+		DEL USER ERR (sin custormer) OJO!
+
+			
+DataLoader
+
+	BatchNotifications (POST)
+	"Notificar a BPS los nuevos lotes disponibles"
+
+		NOTIF LOTE OK
+		NOTIF LOTE ERR (sin batchId)
+		NOTIF LOTE ERR (sin action)
+		NOTIF LOTE ERR (sin creationDate)											
+		NOTIF LOTE ERR (sin supplierItemId)
+		NOTIF LOTE ERR (sin ningun filtro)
+		NOTIF LOTE ERR (con datos invalidos)
+																																																															
+Bills
+	
+	Obtener deudas (GET)
+
+		GET DEUDA OK (c/consumed N)
+		GET DEUDA OK (c/consumed C)
+		GET DEUDA OK (c/consumed F)
+		GET DEUDA OK (c/consumed F)	
+		GET DEUDA OK (c/supplierItemId)
+		GET DEUDA OK (c/customerId)
+		GET DEUDA OK (c/expirationDays)
+		GET DEUDA ERR (sin retailStore)
+		GET DEUDA ERR (sin consumed)
+		
+	Enviar notificación de pago (POST)
+		
+		NOTIF PAGO OK 
+		NOTIF PAGO OK (s/amount)
+		NOTIF PAGO ERR (sin retailStore)
+		NOTIF PAGO ERR (sin supplierItemId)
+		NOTIF PAGO ERR (sin customerId)
+		NOTIF PAGO ERR (sin scanData)
+		
